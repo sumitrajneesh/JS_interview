@@ -368,12 +368,61 @@ var sumit ={
 //   }
   
   
-  function foo() {
-      let a = b = 0;
-      a++;
-      return a;
-    }
+//   function foo() {
+//       let a = b = 0;
+//       a++;
+//       return a;
+//     }
     
- console.log(foo()) ; 
-  console.log(typeof(a))  ; // => ??? number 
-   console.log(typeof(b)) ; // => ???
+//  console.log(foo()) ; 
+//  console.log(typeof(a))  ; // => ??? number 
+//    console.log(typeof(b)) ; // => ???
+
+
+/**
+ * Sum of all natural numbers from 1 and n
+ */
+
+// function sumOfNaturalNumber(num) {
+//   let sum = 0;
+//   for(let i = 1; i <= num; i++) {
+//     sum = sum + i;
+//   }
+
+//   return sum;
+// } 
+
+// console.log(sumOfNaturalNumber(5));
+
+/***
+ * Sum of digits of a number
+ */
+
+// function SumOfDigits(num) {
+//   let sum = 0;
+//   while(num > 0) {
+//     sum += num % 10;
+//     num = Math.floor(num / 10);
+//   }
+
+//   return sum;
+// }
+
+// console.log(SumOfDigits(1289));
+
+
+/**
+ * Count the number of digits of a number
+ */
+
+function countDigits(num) {
+  num = Math.abs(num);
+  let count = 0;
+  do {
+    count ++;
+    num = Math.floor(num/10);
+  } while ( num > 0);
+  return count;
+}
+
+console.log(countDigits(121));
