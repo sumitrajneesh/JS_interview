@@ -75,4 +75,31 @@
  * 4. Create a counter function which has increment and getValue functionality
  */
 
+/**
+ * Remove all duplicates in the array
+ */
 
+
+// const uniqueArr = (arr) => {
+//     return [...new set(arr)];
+// }
+
+
+// const uniqueArr = (arr) => {
+//     const result = [];
+//     arr.forEach((item) => {
+//         if(!result.includes(item)) {
+//             result.push(item)
+//         }
+//     })
+
+//     return result;
+// }
+
+const uniqueArr = (arr) => {
+    return arr.reduce((acc, el) => {
+        return acc.includes(el) ? acc : [ ...acc, el]
+    }, [])
+}
+
+console.log(uniqueArr([2,2,3,4,4,4,5]));
