@@ -415,14 +415,105 @@ var sumit ={
  * Count the number of digits of a number
  */
 
-function countDigits(num) {
-  num = Math.abs(num);
-  let count = 0;
-  do {
-    count ++;
-    num = Math.floor(num/10);
-  } while ( num > 0);
-  return count;
+// function countDigits(num) {
+//   num = Math.abs(num);
+//   let count = 0;
+//   do {
+//     count ++;
+//     num = Math.floor(num/10);
+//   } while ( num > 0);
+//   return count;
+// }
+
+// console.log(countDigits(121));
+
+/**
+ * check if a number is palindrome
+ * 
+ * An algorithm for palindromes
+If you want to check if a word, phrase, or number is a palindrome. 
+we can use the following pseudocode to check for a palindrome:
+
+1. Firstly, reverse the word, phrase, or number.
+2. Then, check if reversed string or phrase is equal to the original or not.
+3. The word, phrase, or number will be a palindrome, if and only if the reversed version is the same as the original.
+ */
+
+// let isPlaindrome = (x) => {
+//   let rev = x.toString();
+//   let result = rev.split('').reverse().join('');
+//   return rev === result
+
+// } 
+
+// let x = "racecar";
+
+// console.log(isPlaindrome(1213));
+
+/**
+ * Find the Fibonacci number
+ * 
+ */
+
+// let fib = (number) => {
+//   if ( number < 2) {
+//     return number;
+//   }
+
+//   let prev = 0, curr = 1, next;
+//   for(let i =2; i<=number; i++) {
+//     next = prev + curr;
+//     curr = next;
+//   }
+
+//   return next;
+
+// }
+
+// console.log(fib(4));
+
+// function fibonacci(num) {
+//   if (num == 1)
+//       return 0;
+//   if (num == 2)
+//       return 1;
+//   return fibonacci(num - 1) + fibonacci(num - 2);
+// }
+// console.log("Fibonacci(5): " + fibonacci(5));
+// console.log("Fibonacci(8): " + fibonacci(8));
+
+
+/**
+ * MissingNumber in an Array
+ */
+
+// Function to find the missing number 
+function findMissing(arr, N) {
+  let i;
+
+  // Create an Array of size N 
+  // and filled with 0 
+  let temp = new Array(N).fill(0);
+
+  // If array element exist then 
+  // set the frequency to 1 
+  for (i = 0; i < N; i++) {
+      temp[arr[i] - 1] = 1;
+  }
+
+  let ans = 0;
+  for (i = 0; i <= N; i++) {
+      if (temp[i] === 0)
+          ans = i + 1;
+  }
+  console.log(ans);
 }
 
-console.log(countDigits(121));
+// Driver code 
+let arr = [1, 3, 7, 5, 6, 2];
+let n = arr.length;
+
+// Function call 
+console.log(findMissing(arr, n));
+
+
